@@ -1,0 +1,6 @@
+data/moe.nyarchlinux.scripts.desktop.in
+data/moe.nyarchlinux.scripts.appdata.xml.in
+data/moe.nyarchlinux.scripts.gschema.xml
+src/main.py
+src/window.py
+src/window.ui

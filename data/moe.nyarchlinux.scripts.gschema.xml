@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="nyarchscript">
+	<schema id="moe.nyarchlinux.scripts" path="/moe/nyarchlinux/scripts/">
+	</schema>
+</schemalist>
