@@ -42,9 +42,11 @@ class NyarchscriptWindow(Adw.ApplicationWindow):
 
     def generate_section(self, section):
         adwsection = Adw.PreferencesGroup()
+        adwsection.set_margin_start(50)
+        adwsection.set_margin_end(50)
         adwsection.set_title(section["title"])
         if section["subtitle"] is not None:
-            adwsection.set_subtitle(section["subtitle"])
+            adwsection.set_description(section["subtitle"])
         for script in section["scripts"]:
             print(script)
             row = self.generate_row(script)
