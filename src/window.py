@@ -49,7 +49,6 @@ class NyarchscriptWindow(Adw.ApplicationWindow):
         if section["subtitle"] is not None:
             adwsection.set_description(section["subtitle"])
         for script in section["scripts"]:
-            print(script)
             row = self.generate_row(script)
             adwsection.add(row)
         return adwsection

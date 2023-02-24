@@ -96,6 +96,7 @@ SCRIPTS = [
 					},
 					{
 						"title": "Install Oh My Fish!",
+						"website": "xdg-open https://github.com/oh-my-fish/oh-my-fish#Getting-Started",
 						"subtitle": "This command installs Oh My Fish to tweak fish easily",
 						"command": "curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish;exec fish",
 						"description": "curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish",
@@ -110,15 +111,15 @@ SCRIPTS = [
 					{
 						"title": "Install preload",
 						"subtitle": "Makes applications run faster by prefetching binaries and shared objects",
-						"command": "trizen -S preload; sudo systemctl enable preload; exec bash",
-						"description": "trizen -S preload\nsudo systemctl enable preload",
+						"command": "trizen -S preload; sudo systemctl enable --now preload; exec bash",
+						"description": "trizen -S preload\nsudo systemctl enable --now preload",
 					},
 					{
 						"title": "Install auto-cpufreq",
 						"website": "xdg-open https://github.com/AdnanHodzic/auto-cpufreq",
 						"subtitle": "Automatic CPU speed and power optimizer, useful to henance laptop battery life",
 						"command": "trizen -S auto-cpufreq;exec bash",
-						"description": "trizen -S auto-cpufreq | bash",
+						"description": "trizen -S auto-cpufreq",
 					},
 				]
 			},
@@ -130,14 +131,14 @@ SCRIPTS = [
 					{
 						"title": "Install Linux Zen Kernel",
 						"subtitle": "This command installs linux zen kernel, optimized for desktop, you can choose which kernel to boot from GRUB in 'advanced options'",
-						"command": "sudo pacman -S linux-zen linux-zen-headers;exec fish",
-						"description": "sudo pacman -S linux-zen linux-zen-headers | fish",
+						"command": "sudo pacman -S linux-zen linux-zen-headers;exec bash",
+						"description": "sudo pacman -S linux-zen linux-zen-headers",
 					},
 					{
 						"title": "Install Linux LTS Kernel",
 						"subtitle": "This command installs linux Long Term Support kernel, useful if you have issues with proprietary drivers, you can choose which kernel to boot from GRUB in 'advanced options'",
-						"command": "sudo pacman -S linux-lts linux-lts-headers;exec fish",
-						"description": "sudo pacman -S linux-lts linux-lts-headers | fish",
+						"command": "sudo pacman -S linux-lts linux-lts-headers;exec bash",
+						"description": "sudo pacman -S linux-lts linux-lts-headers",
 					},
 				]
 			},
@@ -157,7 +158,7 @@ SCRIPTS = [
 						"title": "Discord Dnome Theme",
 						"website": "xdg-open https://github.com/NyarchLinux/NyarchScript/tree/master/docs/DNOME.md",
 						"subtitle": "Make discord more coherent with your desktop, this command will also install crycord to inject css",
-						"command": "trizen -S crycord; mkdir -p ~/.config/discord-themes; cd ~/.config/discord-themes; wget https://github.com/GeopJr/DNOME/blob/main/DNOME-latest.css; crycord -c ~/.config/discord-themes/DNOME-latest.css",
+						"command": "trizen -S crycord; mkdir -p ~/.config/discord-themes; cd ~/.config/discord-themes; wget https://github.com/GeopJr/DNOME/blob/main/DNOME-latest.css; crycord -c ~/.config/discord-themes/DNOME-latest.css;exec bash",
 						"description": "trizen -S crycord  # Install Crycord from the AUR\nmkdir -p ~/.config/discord-themes\ncd ~/.config/discord-themes\nwget https://github.com/GeopJr/DNOME/blob/main/DNOME-latest.css  # Download css theme\ncrycord -c ~/.config/discord-themes/DNOME-latest.css  # Inject CSS",
 					},
 				]
