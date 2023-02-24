@@ -35,8 +35,8 @@ SCRIPTS = [
 					{
 						"title": "Refresh Keyring",
 						"subtitle": "Refresh pacman Keyring, usually, it is very rarely needed and a pretty long operation",
-						"command": "pacman-key --refresh-keys;exec bash",
-						"description": "pacman-key --refresh-keys",
+						"command": "sudo pacman-key --refresh-keys;exec bash",
+						"description": "sudo pacman-key --refresh-keys",
 					},
 				]
 			},
@@ -97,7 +97,7 @@ SCRIPTS = [
 					{
 						"title": "Install fish",
 						"subtitle": "This command installs fish and sets it as default shell",
-						"command": "sudo pacman -S fish;chsh fish; exec fish",
+						"command": "sudo pacman -S fish;chsh -s $(which fish); exec fish",
 						"description": "sudo pacman -S fish & chsh fish",
 					},
 					{
