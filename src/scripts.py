@@ -1,7 +1,7 @@
 SCRIPTS = [
 	{
 		"title": "Updates",
-		"icon-name": "audio-volume-high-symbolic",
+		"icon-name": "updates-symbolic",
 		"sections": [
 			{
 			"title":  "Pacman",
@@ -19,6 +19,18 @@ SCRIPTS = [
 						"subtitle": "Mirrors can be out of sync, use this command to resyncronize them",
 						"command": "sudo pacman -Syyu; exec bash",
 						"description": "sudo pacman -Syyu",
+					},
+					{
+						"title": "Update mirrorlist",
+						"subtitle": "Will update the mirrorlist for faster downloads using pacman",
+						"command": "sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak;sudo reflector --verbose --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; exec bash",
+						"description": "sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak\nsudo reflector --verbose --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist",
+					},
+					{
+						"title": "Restore old mirrorlist",
+						"subtitle": "Restore old mirrorlist if mirrorlist update failed",
+						"command": "sudo rm -rf /etc/pacman.d/mirrorlist; sudo cp /etc/pacman.d/mirrorlist.bak /etc/pacman.d/mirrorlist; exec bash",
+						"description": "sudo rm -rf /etc/pacman.d/mirrorlist\nsudo cp /etc/pacman.d/mirrorlist.bak /etc/pacman.d/mirrorlist",
 					},
 					{
 						"title": "Refresh Keyring",
@@ -69,7 +81,7 @@ SCRIPTS = [
 	},
 	{
 		"title": "Install",
-		"icon-name": "audio-volume-high-symbolic",
+		"icon-name": "palette-symbolic",
 		"sections": [
 			{
 			"title":  "Command-line Utilities",
@@ -79,8 +91,53 @@ SCRIPTS = [
 					{
 						"title": "Install fish",
 						"subtitle": "This command installs fish and sets it as default shell",
-						"command": "sudo pacman -S fish;exec bash",
+						"command": "sudo pacman -S fish;chsh fish; exec fish",
 						"description": "sudo pacman -S fish & chsh fish",
+					},
+					{
+						"title": "Install Oh My Fish!",
+						"subtitle": "This command installs Oh My Fish to tweak fish easily",
+						"command": "curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish;exec fish",
+						"description": "curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install | fish",
+					},
+				]
+			},
+			{
+			"title":  "Performance",
+			"subtitle": None,
+			"scripts":
+				[
+					{
+						"title": "Install preload",
+						"subtitle": "Makes applications run faster by prefetching binaries and shared objects",
+						"command": "trizen -S preload; sudo systemctl enable preload; exec bash",
+						"description": "trizen -S preload\nsudo systemctl enable preload",
+					},
+					{
+						"title": "Install auto-cpufreq",
+						"website": "xdg-open https://github.com/AdnanHodzic/auto-cpufreq",
+						"subtitle": "Automatic CPU speed and power optimizer, useful to henance laptop battery life",
+						"command": "trizen -S auto-cpufreq;exec bash",
+						"description": "trizen -S auto-cpufreq | bash",
+					},
+				]
+			},
+			{
+			"title":  "Kernels",
+			"subtitle": None,
+			"scripts":
+				[
+					{
+						"title": "Install Linux Zen Kernel",
+						"subtitle": "This command installs linux zen kernel, optimized for desktop, you can choose which kernel to boot from GRUB in 'advanced options'",
+						"command": "sudo pacman -S linux-zen linux-zen-headers;exec fish",
+						"description": "sudo pacman -S linux-zen linux-zen-headers | fish",
+					},
+					{
+						"title": "Install Linux LTS Kernel",
+						"subtitle": "This command installs linux Long Term Support kernel, useful if you have issues with proprietary drivers, you can choose which kernel to boot from GRUB in 'advanced options'",
+						"command": "sudo pacman -S linux-lts linux-lts-headers;exec fish",
+						"description": "sudo pacman -S linux-lts linux-lts-headers | fish",
 					},
 				]
 			},
@@ -90,20 +147,15 @@ SCRIPTS = [
 			"scripts":
 				[
 					{
-						"title": "Install GRUB theme",
-						"subtitle": "This command installs fish and sets it as default shell",
-						"command": "",
-						"description": "",
-					},
-					{
-						"title": "Firefox GTK Theme",
+						"title": "Firefox Gnome Theme",
+						"website": "xdg-open https://github.com/rafaelmardojai/firefox-gnome-theme",
 						"subtitle": "Make firefox more coherent with your desktop",
-						"command": "",
-						"description": "",
+						"command": "cd /tmp; git clone https://github.com/rafaelmardojai/firefox-gnome-theme; cd firefox-gnome-theme; ./scripts/auto-install.sh; exec bash",
+						"description": "cd /tmp\ngit clone https://github.com/rafaelmardojai/firefox-gnome-theme\ncd firefox-gnome-theme\n./scripts/auto-install.sh",
 					},
 					{
 						"title": "Discord Dnome Theme",
-						"website": "xdg-open https://github.com/NyarchLinux/NyarchScript/tree/main/docs/DNOME.md",
+						"website": "xdg-open https://github.com/NyarchLinux/NyarchScript/tree/master/docs/DNOME.md",
 						"subtitle": "Make discord more coherent with your desktop, this command will also install crycord to inject css",
 						"command": "trizen -S crycord; mkdir -p ~/.config/discord-themes; cd ~/.config/discord-themes; wget https://github.com/GeopJr/DNOME/blob/main/DNOME-latest.css; crycord -c ~/.config/discord-themes/DNOME-latest.css",
 						"description": "trizen -S crycord  # Install Crycord from the AUR\nmkdir -p ~/.config/discord-themes\ncd ~/.config/discord-themes\nwget https://github.com/GeopJr/DNOME/blob/main/DNOME-latest.css  # Download css theme\ncrycord -c ~/.config/discord-themes/DNOME-latest.css  # Inject CSS",
@@ -118,14 +170,20 @@ SCRIPTS = [
 					{
 						"title": "Install nvidia drivers",
 						"subtitle": "Install nvidia drivers, not needed on nvidia ISO builds",
-						"command": "",
-						"description": "",
+						"command": "sudo pacman -S nvidia nvidia-libgl; echo 'Reboot to install drivers';exec bash",
+						"description": "sudo pacman -S nvidia nvidia-libgl",
 					},
 					{
-						"title": "Firefox GTK Theme",
-						"subtitle": "Make firefox more coherent with your desktop",
-						"command": "",
-						"description": "",
+						"title": "Wacom drivers",
+						"subtitle": "Install wacom drivers for graphics tablets and stylus",
+						"command": "sudo pacman -S xf86-input-wacom libwacom;trizen -S input-wacom-dkms wacom-utility;exec bash",
+						"description": "sudo pacman -S xf86-input-wacom libwacom",
+					},
+					{
+						"title": "Wacom drivers for Surface devices",
+						"subtitle": "Install a patched version of libwacom for Surface devices",
+						"command": "trizen -S libwacom-surface;exec bash",
+						"description": "trizen -S libwacom-surface",
 					},
 				]
 			}
@@ -133,7 +191,7 @@ SCRIPTS = [
 	},
 	{
 		"title": "Tweaks",
-		"icon-name": "audio-volume-high-symbolic",
+		"icon-name": "tweaks-symbolic",
 		"sections": [
 			{
 			"title":  "Touchscreen scripts",
@@ -141,10 +199,59 @@ SCRIPTS = [
 			"scripts":
 				[
 					{
+						"title": "Make firefox use Wayland",
+						"subtitle": "Do not run this command if you are using X11, check the script in info section of Nyarch Script to know if you are using it. Enhances Firefox perfomances under wayland.",
+						"command": "cd /usr/share; sudo rm -rf firefox.desktop;sudo wget https://raw.githubusercontent.com/NyarchLinux/NyarchScript/master/docs/firefox.desktop; sudo chmod +x firefox.desktop;exec bash",
+						"description": "cd /usr/share\nsudo rm -rf firefox.desktop\nsudo wget https://raw.githubusercontent.com/NyarchLinux/NyarchScript/master/docs/firefox.desktop\nsudo chmod +x firefox.desktop",
+					},
+					{
 						"title": "Fix firefox on touchscreen",
-						"subtitle": "This command installs fish and sets it as default shell",
-						"command": "sudo pacman -S fish;exec bash",
-						"description": "sudo pacman -S fish & chsh fish",
+						"subtitle": "This command will fix firefox gestures on touchscreens",
+						"command": "echo export MOZ_USE_XINPUT2=1 | sudo tee /etc/profile.d/use-xinput2.sh;exec bash",
+						"description": "echo export MOZ_USE_XINPUT2=1 | sudo tee /etc/profile.d/use-xinput2.sh",
+					},
+					{
+						"title": "Install osk/touchpad extension",
+						"subtitle": "Useful on some 2 in 1, this extension enables On Screen Keyboard from accessibility settings when touchpad is turned off and viceversa",
+						"command": "cd ~/.config/local/share/gnome-shell/extensions;git clone https://github.com/FrancescoCaracciolo/OSK-Touchpad-inverse-toggle-Gnome-Ext.git;exec bash",
+						"description": "cd ~/.config/local/share/gnome-shell/extensions\ngit clone https://github.com/FrancescoCaracciolo/OSK-Touchpad-inverse-toggle-Gnome-Ext.git",
+					},
+				]
+			},
+		]
+	},
+	{
+		"title": "Information",
+		"icon-name": "info-symbolic",
+		"sections": [
+			{
+			"title":  "Command to get information about your system",
+			"subtitle": None,
+			"scripts":
+				[
+					{
+						"title": "Run nyaofetch",
+						"subtitle": "This command will show you your general system information",
+						"command": "nyaofetch;exec bash",
+						"description": "nyaofetch",
+					},
+					{
+						"title": "Run btop",
+						"subtitle": "This command will show an overall interface with your system resources information",
+						"command": "btop;exec bash",
+						"description": "btop",
+					},
+					{
+						"title": "Check temperatures",
+						"subtitle": "This command will show you your system temperatures",
+						"command": "sensors;exec bash",
+						"description": "sensors",
+					},
+					{
+						"title": "Check if running on Wayland",
+						"subtitle": "This command will tell you x11 if running on Xorg, Wayland if running on wayland",
+						"command": "echo $XDG_SESSION_TYPE;exec bash",
+						"description": "echo $XDG_SESSION_TYPE",
 					},
 				]
 			},
