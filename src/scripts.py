@@ -92,7 +92,7 @@ SCRIPTS = [
 						"title": "Install fish",
 						"subtitle": "This command installs fish and sets it as default shell",
 						"command": "sudo pacman -S fish;chsh -s $(which fish); exec fish",
-						"description": "sudo pacman -S fish & chsh fish",
+						"description": "sudo pacman -S fish\nchsh -s $(which fish); exec fish",
 					},
 					{
 						"title": "Install Oh My Fish!",
@@ -201,8 +201,8 @@ SCRIPTS = [
 					{
 						"title": "Make firefox use Wayland",
 						"subtitle": "Do not run this command if you are using X11, check the script in info section of Nyarch Script to know if you are using it. Enhances Firefox perfomances under wayland.",
-						"command": "cd /usr/share; sudo rm -rf firefox.desktop;sudo wget https://raw.githubusercontent.com/NyarchLinux/NyarchScript/master/docs/firefox.desktop; sudo chmod +x firefox.desktop;exec bash",
-						"description": "cd /usr/share\nsudo rm -rf firefox.desktop\nsudo wget https://raw.githubusercontent.com/NyarchLinux/NyarchScript/master/docs/firefox.desktop\nsudo chmod +x firefox.desktop",
+						"command": "cd /usr/share/applications; sudo rm -rf firefox.desktop;sudo wget https://raw.githubusercontent.com/NyarchLinux/NyarchScript/master/docs/firefox.desktop; sudo chmod +x firefox.desktop;exec bash",
+						"description": "cd /usr/share/applications\nsudo rm -rf firefox.desktop\nsudo wget https://raw.githubusercontent.com/NyarchLinux/NyarchScript/master/docs/firefox.desktop\nsudo chmod +x firefox.desktop",
 					},
 					{
 						"title": "Fix firefox on touchscreen",
