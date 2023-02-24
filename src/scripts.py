@@ -52,10 +52,16 @@ SCRIPTS = [
 						"description": "cd /tmp\nwget https://github.com/nyarchlinux/nyarchtour/releases/latest/download/nyarchtour.flatpak\nflatpak install nyarchtour.flatpak",
 					},
 					{
+						"title": "Update Nyarch Customize",
+						"subtitle": "Update Nyarch Customize application by downloading it from the latest release on github",
+						"command": "cd /tmp; wget https://github.com/nyarchlinux/nyarchcustomize/releases/latest/download/nyarchcustomize.flatpak; flatpak install nyarchcustomize.flatpak;exec bash",
+						"description": "cd /tmp\nwget https://github.com/nyarchlinux/nyarchcustomize/releases/latest/download/nyarchcustomize.flatpak\nflatpak install nyarchcustomize.flatpak",
+					},
+					{
 						"title": "Update Nyarch Wizard",
 						"subtitle": "Update Nyarch Wizard application by downloading it from the latest release on github",
-						"command": "cd /tmp; wget https://github.com/nyarchlinux/nyarchwizard/releases/latest/download/nyarchwizard.flatpak; flatpak install nyarchwizard.flatpak;exec bash",
-						"description": "cd /tmp\nwget https://github.com/nyarchlinux/nyarchwizard/releases/latest/download/nyarchwizard.flatpak\nflatpak install nyarchwizard.flatpak",
+						"command": "cd /tmp; wget https://github.com/nyarchlinux/nyarchwizard/releases/latest/download/wizard.flatpak; flatpak install wizard.flatpak;exec bash",
+						"description": "cd /tmp\nwget https://github.com/nyarchlinux/nyarchwizard/releases/latest/download/wizard.flatpak\nflatpak install wizard.flatpak",
 					},
 					{
 						"title": "Update Catgirl Downloader",
