@@ -32,12 +32,6 @@ SCRIPTS = [
 						"command": "sudo rm -rf /etc/pacman.d/mirrorlist; sudo cp /etc/pacman.d/mirrorlist.bak /etc/pacman.d/mirrorlist; exec bash",
 						"description": "sudo rm -rf /etc/pacman.d/mirrorlist\nsudo cp /etc/pacman.d/mirrorlist.bak /etc/pacman.d/mirrorlist",
 					},
-					{
-						"title": "Refresh Keyring",
-						"subtitle": "Refresh pacman Keyring, usually, it is very rarely needed and a pretty long operation",
-						"command": "sudo pacman-key --refresh-keys;exec bash",
-						"description": "sudo pacman-key --refresh-keys",
-					},
 				]
 			},
 			{
