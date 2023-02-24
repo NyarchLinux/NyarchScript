@@ -71,7 +71,7 @@ class NyarchscriptWindow(Adw.ApplicationWindow):
         row.add_action(button)
         if "website" in script:
             websitebutton = Gtk.Button()
-            websitebutton.set_icon_name("network-transmit-receive-symbolic")
+            websitebutton.set_icon_name("web-symbolic")
             websitebutton.add_css_class("flat")
             websitebutton.set_margin_top(15)
             websitebutton.set_margin_bottom(15)
