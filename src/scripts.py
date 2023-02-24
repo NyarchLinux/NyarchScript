@@ -155,16 +155,29 @@ SCRIPTS = [
 						"description": "cd /tmp\ngit clone https://github.com/rafaelmardojai/firefox-gnome-theme\ncd firefox-gnome-theme\n./scripts/auto-install.sh",
 					},
 					{
+						"title": "Uninstall Firefox Gnome theme",
+						"website": "xdg-open https://github.com/rafaelmardojai/firefox-gnome-theme#uninstalling",
+						"subtitle": "Uninstall Firefox Gnome Theme",
+						"command": "xdg-open https://github.com/rafaelmardojai/firefox-gnome-theme#uninstalling",
+						"description": "https://github.com/rafaelmardojai/firefox-gnome-theme#uninstalling",
+					},
+					{
 						"title": "Discord Dnome Theme",
 						"website": "xdg-open https://github.com/NyarchLinux/NyarchScript/tree/master/docs/DNOME.md",
 						"subtitle": "Make discord more coherent with your desktop, this command will also install crycord to inject css",
 						"command": "trizen -S crycord; mkdir -p ~/.config/discord-themes; cd ~/.config/discord-themes; wget https://github.com/GeopJr/DNOME/blob/main/DNOME-latest.css; crycord -c ~/.config/discord-themes/DNOME-latest.css;exec bash",
 						"description": "trizen -S crycord  # Install Crycord from the AUR\nmkdir -p ~/.config/discord-themes\ncd ~/.config/discord-themes\nwget https://github.com/GeopJr/DNOME/blob/main/DNOME-latest.css  # Download css theme\ncrycord -c ~/.config/discord-themes/DNOME-latest.css  # Inject CSS",
 					},
+					{
+						"title": "Uninstall Discord Dnome Theme",
+						"subtitle": "Uninstall dnome theme from discord",
+						"command": "crycord -r; exec bash",
+						"description": "crycord -r",
+					},
 				]
 			},
 			{
-			"title":  "Extra",
+			"title":  "Drivers",
 			"subtitle": None,
 			"scripts":
 				[
