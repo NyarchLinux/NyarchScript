@@ -156,7 +156,7 @@ SCRIPTS = [
 						"title": "Firefox Gnome Theme",
 						"website": "xdg-open https://github.com/rafaelmardojai/firefox-gnome-theme",
 						"subtitle": "Make firefox more coherent with your desktop",
-						"command": "cd /tmp; git clone https://github.com/rafaelmardojai/firefox-gnome-theme; cd firefox-gnome-theme; ./scripts/auto-install.sh; exec bash",
+						"command": "cd /tmp; git clone https://github.com/rafaelmardojai/firefox-gnome-theme; cd firefox-gnome-theme; bash scripts/auto-install.sh; exec bash",
 						"description": "cd /tmp\ngit clone https://github.com/rafaelmardojai/firefox-gnome-theme\ncd firefox-gnome-theme\n./scripts/auto-install.sh",
 					},
 					{
