@@ -30,6 +30,7 @@ class NyarchscriptWindow(Adw.ApplicationWindow):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.commands = {}
+        self.websites = {}
         self.generate_pages()
 
     def generate_pages(self):
@@ -68,8 +69,19 @@ class NyarchscriptWindow(Adw.ApplicationWindow):
         label = self.code_label(script["description"])
         row.add_row(label)
         row.add_action(button)
+        if "website" in script:
+            websitebutton = Gtk.Button()
+            websitebutton.set_icon_name("network-transmit-receive-symbolic")
+            websitebutton.add_css_class("flat")
+            websitebutton.set_margin_top(15)
+            websitebutton.set_margin_bottom(15)
+            self.websites[websitebutton] = script["website"]
+            websitebutton.connect("clicked", self.buttonweb_click)
+            row.add_action(websitebutton)
         return row
 
+    def buttonweb_click(self, button):
+        self.execute_command(self.websites[button])
     def button_clicked(self, button):
         self.background_process(self.commands[button])
     def code_label(self, text):
@@ -85,3 +97,6 @@ class NyarchscriptWindow(Adw.ApplicationWindow):
 
     def background_process(self, command):
     	subprocess.Popen(["flatpak-spawn",  "--host", "kitty", "bash", "-c", command])
+
+    def execute_command(self, command):
+    	subprocess.Popen(["flatpak-spawn",  "--host", "bash", "-c", command])

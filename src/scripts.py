@@ -95,6 +95,38 @@ SCRIPTS = [
 						"command": "",
 						"description": "",
 					},
+					{
+						"title": "Firefox GTK Theme",
+						"subtitle": "Make firefox more coherent with your desktop",
+						"command": "",
+						"description": "",
+					},
+					{
+						"title": "Discord Dnome Theme",
+						"website": "xdg-open https://github.com/NyarchLinux/NyarchScript/tree/main/docs/DNOME.md",
+						"subtitle": "Make discord more coherent with your desktop, this command will also install crycord to inject css",
+						"command": "trizen -S crycord; mkdir -p ~/.config/discord-themes; cd ~/.config/discord-themes; wget https://github.com/GeopJr/DNOME/blob/main/DNOME-latest.css; crycord -c ~/.config/discord-themes/DNOME-latest.css",
+						"description": "trizen -S crycord  # Install Crycord from the AUR\nmkdir -p ~/.config/discord-themes\ncd ~/.config/discord-themes\nwget https://github.com/GeopJr/DNOME/blob/main/DNOME-latest.css  # Download css theme\ncrycord -c ~/.config/discord-themes/DNOME-latest.css  # Inject CSS",
+					},
+				]
+			},
+			{
+			"title":  "Extra",
+			"subtitle": None,
+			"scripts":
+				[
+					{
+						"title": "Install nvidia drivers",
+						"subtitle": "Install nvidia drivers, not needed on nvidia ISO builds",
+						"command": "",
+						"description": "",
+					},
+					{
+						"title": "Firefox GTK Theme",
+						"subtitle": "Make firefox more coherent with your desktop",
+						"command": "",
+						"description": "",
+					},
 				]
 			}
 		]
