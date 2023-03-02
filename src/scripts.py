@@ -32,6 +32,12 @@ SCRIPTS = [
 						"command": "sudo rm -rf /etc/pacman.d/mirrorlist; sudo cp /etc/pacman.d/mirrorlist.bak /etc/pacman.d/mirrorlist; exec bash",
 						"description": "sudo rm -rf /etc/pacman.d/mirrorlist\nsudo cp /etc/pacman.d/mirrorlist.bak /etc/pacman.d/mirrorlist",
 					},
+					{
+						"title": "Remove db lock",
+						"subtitle": "Remove pacman db lock in case of errors.",
+						"command": "sudo rm -rf  /var/lib/pacman/db.lck; exec bash",
+						"description": "sudo rm -rf  /var/lib/pacman/db.lck",
+					},
 				]
 			},
 			{
