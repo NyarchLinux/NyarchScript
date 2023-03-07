@@ -81,6 +81,12 @@ SCRIPTS = [
 						"command": "cd /tmp; git clone https://github.com/NyarchLinux/NyarcMenu.git; cd NyarcMenu; make install; exec bash",
 						"description": "cd /tmp\ngit clone https://github.com/NyarchLinux/NyarcMenu.git\ncd NyarcMenu\nmake install",
 					},
+					{
+						"title": "Update Material You",
+						"subtitle": "Update Material You extension, the Gnome extension that manages Material You",
+						"command": "cd /tmp; git clone https://github.com/NyarchLinux/nyarch-material-you-theme.git; cd nyarch-material-you-theme; make build;make install; npm install --prefix $HOME/.local/share/gnome-shell/extensions/material-you-theme@asubbiah.com; exec bash",
+						"description": "cd /tmp\ngit clone https://github.com/NyarchLinux/nyarch-material-you-theme.git\ncd nyarch-material-you-theme\nmake build\nmake install\nnpm install --prefix $HOME/.local/share/gnome-shell/extensions/material-you-theme@asubbiah.com;",
+					},
 				]
 			}
 		]
