@@ -129,9 +129,15 @@ SCRIPTS = [
 					{
 						"title": "Install auto-cpufreq",
 						"website": "xdg-open https://github.com/AdnanHodzic/auto-cpufreq",
-						"subtitle": "Automatic CPU speed and power optimizer, useful to henance laptop battery life",
+						"subtitle": "Automatic CPU speed and power optimizer, useful to enhance laptop battery life",
 						"command": "trizen -S auto-cpufreq;exec bash",
 						"description": "trizen -S auto-cpufreq",
+					},
+					{
+						"title": "Install power-profiles-daemon",
+						"subtitle": "Power Profiles daemon modifies system behaviour based upon user-selected power profiles, choosen from quick settings",
+						"command": "sudo pacman -S power-profiles-daemon;exec bash",
+						"description": "sudo pacman -S power-profiles-daemon",
 					},
 				]
 			},
@@ -186,6 +192,20 @@ SCRIPTS = [
 						"command": "crycord -r; exec bash",
 						"description": "crycord -r",
 					},
+					{
+						"title": "Install Pywalfox",
+						"subtitle": "Adapts firefox theme color to NyarchLinux theme",
+						"command": "trizen -S python-pywalfox; pywalfox install; xdg-open https://addons.mozilla.org/it/firefox/addon/pywalfox/; exec bash",
+						"website": "xdg-open https://addons.mozilla.org/it/firefox/addon/pywalfox/",
+						"description": "trizen -S python-pywalfox\npywalfox install\nxdg-open https://addons.mozilla.org/it/firefox/addon/pywalfox/",
+					},
+					{
+						"title": "Install Wal VSCode Theme",
+						"subtitle": "Adapts VSCode theme color to NyarchLinux theme",
+						"command": "xdg-open https://marketplace.visualstudio.com/items?itemName=dlasagno.wal-theme",
+						"website": "xdg-open https://marketplace.visualstudio.com/items?itemName=dlasagno.wal-theme",
+						"description": "xdg-open https://marketplace.visualstudio.com/items?itemName=dlasagno.wal-theme",
+					},
 				]
 			},
 			{
@@ -238,9 +258,15 @@ SCRIPTS = [
 					},
 					{
 						"title": "Install osk/touchpad extension",
-						"subtitle": "Useful on some 2 in 1, this extension enables On Screen Keyboard from accessibility settings when touchpad is turned off and viceversa",
-						"command": "cd ~/.config/local/share/gnome-shell/extensions;git clone https://github.com/FrancescoCaracciolo/OSK-Touchpad-inverse-toggle-Gnome-Ext.git;exec bash",
-						"description": "cd ~/.config/local/share/gnome-shell/extensions\ngit clone https://github.com/FrancescoCaracciolo/OSK-Touchpad-inverse-toggle-Gnome-Ext.git",
+						"subtitle": "Useful on some 2 in 1, this extension enables On Screen Keyboard from accessibility settings when touchpad is turned off and vice versa",
+						"command": "git clone https://github.com/FrancescoCaracciolo/OSK-Touchpad-inverse-toggle-Gnome-Ext.git ~/.local/share/gnome-shell/extensions/osktouchpad@francescocaracciolo.uno;exec bash",
+						"description": "git clone https://github.com/FrancescoCaracciolo/OSK-Touchpad-inverse-toggle-Gnome-Ext.git\\\n ~/.local/share/gnome-shell/extensions/osktouchpad@francescocaracciolo.uno",
+					},
+					{
+						"title": "Install screen autorotate extension",
+						"subtitle": "Enable screen rotation regardless of touch mode.",
+						"command": "cd /tmp; git clone https://github.com/shyzus/gnome-shell-extension-screen-autorotate.git; mv gnome-shell-extension-screen-autorotate/screen-rotate@shyzus.github.io ~/.local/share/gnome-shell/extensions/;exec bash",
+						"description": "cd /tmp\ngit clone https://github.com/shyzus/gnome-shell-extension-screen-autorotate.git\nmv gnome-shell-extension-screen-autorotate/screen-rotate@shyzus.github.io ~/.local/share/gnome-shell/extensions/",
 					},
 				]
 			},
