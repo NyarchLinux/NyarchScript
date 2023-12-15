@@ -70,6 +70,12 @@ SCRIPTS = [
 						"description": "cd /tmp\nwget https://github.com/nyarchlinux/catgirldownloader/releases/latest/download/catgirldownloader.flatpak\nflatpak install catgirldownloader.flatpak",
 					},
 					{
+						"title": "Update Waifu Downloader",
+						"subtitle": "Update Waifu Downloader application by downloading it from the latest release on github",
+						"command": "cd /tmp; wget https://github.com/nyarchlinux/waifudownloader/releases/latest/download/waifudownloader.flatpak; flatpak install waifudownloader.flatpak;exec bash",
+						"description": "cd /tmp\nwget https://github.com/nyarchlinux/waifudownloader/releases/latest/download/waifudownloader.flatpak\nflatpak install waifudownloader.flatpak",
+					},
+					{
 						"title": "Update Nyarch Script",
 						"subtitle": "Update Nyarch Script application by downloading it from the latest release on github",
 						"command": "cd /tmp; wget https://github.com/nyarchlinux/nyarchscript/releases/latest/download/nyarchscript.flatpak; flatpak install nyarchscript.flatpak;exec bash",
@@ -239,6 +245,37 @@ SCRIPTS = [
 		"title": "Tweaks",
 		"icon-name": "tweaks-symbolic",
 		"sections": [
+		    {
+		        "title": "Maintenance scripts",
+		        "subtitle": None,
+		        "scripts":
+		            [
+		                {
+		                    "title": "Enable Bluetooth Service",
+		                    "subtitle": "Make bluetooth work",
+		                    "command": "sudo systemctl enable --now bluetooth.service;exec bash",
+		                    "description": "sudo systemctl enable --now bluetooth.service"
+		                },
+		                {
+		                    "title": "Cleanup journal space",
+		                    "subtitle": "Cleanup jorunalctl logs before the last two weeks to free up space",
+		                    "command": "sudo journalctl --vacuum-time=2weeks;exec bash",
+		                    "description": "sudo journalctl --vacuum-time=2weeks"
+		                },
+		                {
+		                    "title": "Clean package cache",
+		                    "subtitle": "Remove pacman package caches to free up space",
+		                    "command": "sudo pacman -Scc;exec bash",
+		                    "description": "sudo pacman -Scc"
+		                },
+		                {
+		                    "title": "Reset all pacman keys",
+		                    "subtitle": "NOTE: Might take some minutes. Reset pacman keys, useful if you are having errors updating the system because of some keys missing/package corrupted",
+		                    "command": "sudo rm /var/lib/pacman/sync/*; sudo rm -rf /etc/pacman.d/gnupg/*; sudo pacman-key --init; sudo pacman-key --populate; sudo pacman -S --noconfirm archlinux-keyring;exec bash",
+		                    "description": "sudo rm /var/lib/pacman/sync/*\nsudo rm -rf /etc/pacman.d/gnupg/*\nsudo pacman-key --init\nsudo pacman-key --populate\nsudo pacman -S --noconfirm archlinux-keyring"
+		                }
+		            ]
+		    },
 			{
 			"title":  "Touchscreen scripts",
 			"subtitle": None,
