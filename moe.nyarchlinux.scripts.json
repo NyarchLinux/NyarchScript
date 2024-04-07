@@ -1,7 +1,7 @@
 {
     "app-id" : "moe.nyarchlinux.scripts",
     "runtime" : "org.gnome.Platform",
-    "runtime-version" : "45",
+    "runtime-version" : "46",
     "sdk" : "org.gnome.Sdk",
     "command" : "nyarchscript",
     "finish-args" : [

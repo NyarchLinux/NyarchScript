@@ -1,8 +1,9 @@
 [Desktop Entry]
 Name=Nyarch Scripts
+Comment=Useful scripts you may want to run on your Nyarch system
 Exec=nyarchscript
 Icon=moe.nyarchlinux.scripts
 Terminal=false
 Type=Application
-Categories=GTK;
+Categories=Utility;GTK;
 StartupNotify=true
