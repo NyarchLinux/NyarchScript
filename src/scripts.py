@@ -11,7 +11,7 @@ SCRIPTS = [
 					{
 						"title": "Run full System Update",
 						"subtitle": "Update the system and all of its packages",
-						"command": "sudo pacman -Syu;exec bash",
+						"command": "sudo pacman -Syu;sudo flatpak update; exec bash",
 						"description": "sudo pacman -Syu",
 					},
 					{
@@ -82,16 +82,10 @@ SCRIPTS = [
 						"description": "cd /tmp\nwget https://github.com/nyarchlinux/nyarchscript/releases/latest/download/nyarchscript.flatpak\nflatpak install nyarchscript.flatpak",
 					},
 					{
-						"title": "Update NyarcMenu",
-						"subtitle": "Update NyarcMenu extension, the Gnome extension that manages menu",
-						"command": "cd /tmp; git clone https://github.com/NyarchLinux/NyarcMenu.git; cd NyarcMenu; make install; exec bash",
-						"description": "cd /tmp\ngit clone https://github.com/NyarchLinux/NyarcMenu.git\ncd NyarcMenu\nmake install",
-					},
-					{
 						"title": "Update Material You",
 						"subtitle": "Update Material You extension, the Gnome extension that manages Material You",
-						"command": "cd /tmp; git clone https://github.com/NyarchLinux/nyarch-material-you-theme.git; cd nyarch-material-you-theme; make build;make install; npm install --prefix $HOME/.local/share/gnome-shell/extensions/material-you-theme@asubbiah.com; exec bash",
-						"description": "cd /tmp\ngit clone https://github.com/NyarchLinux/nyarch-material-you-theme.git\ncd nyarch-material-you-theme\nmake build\nmake install\nnpm install --prefix $HOME/.local/share/gnome-shell/extensions/material-you-theme@asubbiah.com;",
+						"command": "cd /tmp; git clone https://github.com/FrancescoCaracciolo/material-you-colors.git; cd material-you-colors; make build;make install; npm install --prefix $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io; exec bash",
+						"description": "cd /tmp\ngit clone https://github.com/FrancescoCaracciolo/material-you-colors.git\ncd material-you-colors\nmake build\nmake install\nnpm install --prefix $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io;",
 					},
 				]
 			}
@@ -149,7 +143,7 @@ SCRIPTS = [
 			},
 			{
 			"title":  "Kernels",
-			"subtitle": None,
+			"subtitle": "After installing, select your preferred kernel in grub advanced options",
 			"scripts":
 				[
 					{
@@ -281,24 +275,6 @@ SCRIPTS = [
 			"subtitle": None,
 			"scripts":
 				[
-					{
-						"title": "Make firefox use Wayland",
-						"subtitle": "Do not run this command if you are using X11, check the script in info section of Nyarch Script to know if you are using it. Enhances Firefox perfomances under wayland.",
-						"command": "cd /usr/share/applications; sudo rm -rf firefox.desktop;sudo wget https://raw.githubusercontent.com/NyarchLinux/NyarchScript/master/docs/firefox.desktop; sudo chmod +x firefox.desktop;exec bash",
-						"description": "cd /usr/share/applications\nsudo rm -rf firefox.desktop\nsudo wget https://raw.githubusercontent.com/NyarchLinux/NyarchScript/master/docs/firefox.desktop\nsudo chmod +x firefox.desktop",
-					},
-					{
-						"title": "Fix firefox on touchscreen",
-						"subtitle": "This command will fix firefox gestures on touchscreens",
-						"command": "echo export MOZ_USE_XINPUT2=1 | sudo tee /etc/profile.d/use-xinput2.sh;exec bash",
-						"description": "echo export MOZ_USE_XINPUT2=1 | sudo tee /etc/profile.d/use-xinput2.sh",
-					},
-					{
-						"title": "Install osk/touchpad extension",
-						"subtitle": "Useful on some 2 in 1, this extension enables On Screen Keyboard from accessibility settings when touchpad is turned off and vice versa",
-						"command": "git clone https://github.com/FrancescoCaracciolo/OSK-Touchpad-inverse-toggle-Gnome-Ext.git ~/.local/share/gnome-shell/extensions/osktouchpad@francescocaracciolo.uno;exec bash",
-						"description": "git clone https://github.com/FrancescoCaracciolo/OSK-Touchpad-inverse-toggle-Gnome-Ext.git\\\n ~/.local/share/gnome-shell/extensions/osktouchpad@francescocaracciolo.uno",
-					},
 					{
 						"title": "Install screen autorotate extension",
 						"subtitle": "Enable screen rotation regardless of touch mode.",
