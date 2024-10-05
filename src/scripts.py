@@ -21,6 +21,12 @@ SCRIPTS = [
 						"description": "sudo pacman -Syyu",
 					},
 					{
+						"title": "Refresh Pacman keys",
+						"subtitle": "NOTE: Takes some time. In case there are problems with keys, you can refresh every pacman key",
+						"command": "sudo pacman-key --refresh-keys; exec bash",
+						"description": "sudo pacman-key --refresh-keys",
+					},
+					{
 						"title": "Update mirrorlist",
 						"subtitle": "Will update the mirrorlist for faster downloads using pacman",
 						"command": "sudo cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.bak;sudo reflector --verbose --latest 10 --protocol https --sort rate --save /etc/pacman.d/mirrorlist; exec bash",
@@ -45,6 +51,12 @@ SCRIPTS = [
 			"subtitle": "Nyarch linux applications are not automatically updated, use this section to update them",
 			"scripts":
 				[
+					{
+						"title": "Update Nyarch Assistant",
+						"subtitle": "Update Nyarch Assistant application by downloading it from the latest release on github",
+						"command": "cd /tmp; wget https://github.com/nyarchlinux/nyarchassistant/releases/latest/download/nyarchassistant.flatpak; flatpak install nyarchassistant.flatpak;exec bash",
+						"description": "cd /tmp\nwget https://github.com/nyarchlinux/nyarchassistant/releases/latest/download/nyarchassistant.flatpak\nflatpak install nyarchassistant.flatpak",
+					},
 					{
 						"title": "Update Nyarch Tour",
 						"subtitle": "Update Nyarch Tour application by downloading it from the latest release on github",
