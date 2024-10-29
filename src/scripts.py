@@ -135,15 +135,15 @@ SCRIPTS = [
 					{
 						"title": "Install preload",
 						"subtitle": "Makes applications run faster by prefetching binaries and shared objects",
-						"command": "trizen -S preload; sudo systemctl enable --now preload; exec bash",
-						"description": "trizen -S preload\nsudo systemctl enable --now preload",
+						"command": "yay -S preload; sudo systemctl enable --now preload; exec bash",
+						"description": "yay -S preload\nsudo systemctl enable --now preload",
 					},
 					{
 						"title": "Install auto-cpufreq",
 						"website": "xdg-open https://github.com/AdnanHodzic/auto-cpufreq",
 						"subtitle": "Automatic CPU speed and power optimizer, useful to enhance laptop battery life",
-						"command": "trizen -S auto-cpufreq;exec bash",
-						"description": "trizen -S auto-cpufreq",
+						"command": "yay -S auto-cpufreq;exec bash",
+						"description": "yay -S auto-cpufreq",
 					},
 					{
 						"title": "Install power-profiles-daemon",
@@ -195,8 +195,8 @@ SCRIPTS = [
 						"title": "Discord Dnome Theme",
 						"website": "xdg-open https://github.com/NyarchLinux/NyarchScript/tree/master/docs/DNOME.md",
 						"subtitle": "Make discord more coherent with your desktop, this command will also install crycord to inject css",
-						"command": "trizen -S crycord; mkdir -p ~/.config/discord-themes; cd ~/.config/discord-themes; wget https://raw.githubusercontent.com/GeopJr/DNOME/main/DNOME-latest.css; crycord -c ~/.config/discord-themes/DNOME-latest.css;exec bash",
-						"description": "trizen -S crycord  # Install Crycord from the AUR\nmkdir -p ~/.config/discord-themes\ncd ~/.config/discord-themes\nwget https://raw.githubusercontent.com/GeopJr/DNOME/main/DNOME-latest.css  # Download css theme\ncrycord -c ~/.config/discord-themes/DNOME-latest.css  # Inject CSS",
+						"command": "yay -S crycord; mkdir -p ~/.config/discord-themes; cd ~/.config/discord-themes; wget https://raw.githubusercontent.com/GeopJr/DNOME/main/DNOME-latest.css; crycord -c ~/.config/discord-themes/DNOME-latest.css;exec bash",
+						"description": "yay -S crycord  # Install Crycord from the AUR\nmkdir -p ~/.config/discord-themes\ncd ~/.config/discord-themes\nwget https://raw.githubusercontent.com/GeopJr/DNOME/main/DNOME-latest.css  # Download css theme\ncrycord -c ~/.config/discord-themes/DNOME-latest.css  # Inject CSS",
 					},
 					{
 						"title": "Uninstall Discord Dnome Theme",
@@ -207,9 +207,9 @@ SCRIPTS = [
 					{
 						"title": "Install Pywalfox",
 						"subtitle": "Adapts firefox theme color to NyarchLinux theme",
-						"command": "trizen -S python-pywalfox; pywalfox install; xdg-open https://addons.mozilla.org/it/firefox/addon/pywalfox/; exec bash",
+						"command": "yay -S python-pywalfox; pywalfox install; xdg-open https://addons.mozilla.org/it/firefox/addon/pywalfox/; exec bash",
 						"website": "xdg-open https://addons.mozilla.org/it/firefox/addon/pywalfox/",
-						"description": "trizen -S python-pywalfox\npywalfox install\nxdg-open https://addons.mozilla.org/it/firefox/addon/pywalfox/",
+						"description": "yay -S python-pywalfox\npywalfox install\nxdg-open https://addons.mozilla.org/it/firefox/addon/pywalfox/",
 					},
 					{
 						"title": "Install Wal VSCode Theme",
@@ -227,9 +227,9 @@ SCRIPTS = [
 				[
 					{
 						"title": "Install nvidia drivers",
-						"subtitle": "Install nvidia drivers, not needed on nvidia ISO builds",
-						"command": "sudo pacman -S nvidia nvidia-libgl; echo 'Reboot to install drivers';exec bash",
-						"description": "sudo pacman -S nvidia nvidia-libgl",
+						"subtitle": "Open the installation guide for nvidia drivers",
+						"command": "xdg-open https://github.com/korvahannu/arch-nvidia-drivers-installation-guide",
+						"description": "xdg-open https://github.com/korvahannu/arch-nvidia-drivers-installation-guide",
 					},
 					{
 						"title": "Wacom drivers",
@@ -240,8 +240,8 @@ SCRIPTS = [
 					{
 						"title": "Wacom drivers for Surface devices",
 						"subtitle": "Install a patched version of libwacom for Surface devices",
-						"command": "trizen -S libwacom-surface;exec bash",
-						"description": "trizen -S libwacom-surface",
+						"command": "yay -S libwacom-surface;exec bash",
+						"description": "yay -S libwacom-surface",
 					},
 				]
 			}
