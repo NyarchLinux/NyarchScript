@@ -52,6 +52,12 @@ SCRIPTS = [
 			"scripts":
 				[
 					{
+						"title": "Update Nyarch Updater",
+						"subtitle": "Update Nyarch Updater application by downloading it from the latest release on github",
+						"command": "cd /tmp; wget https://github.com/nyarchlinux/nyarchupdater/releases/latest/download/nyarchupdater.flatpak; flatpak install nyarchupdater.flatpak;exec bash",
+						"description": "cd /tmp\nwget https://github.com/nyarchlinux/nyarchupdater/releases/latest/download/nyarchupdater.flatpak\nflatpak install nyarchupdater.flatpak",
+					},
+					{
 						"title": "Update Nyarch Assistant",
 						"subtitle": "Update Nyarch Assistant application by downloading it from the latest release on github",
 						"command": "cd /tmp; wget https://github.com/nyarchlinux/nyarchassistant/releases/latest/download/nyarchassistant.flatpak; flatpak install nyarchassistant.flatpak;exec bash",
@@ -96,8 +102,8 @@ SCRIPTS = [
 					{
 						"title": "Update Material You",
 						"subtitle": "Update Material You extension, the Gnome extension that manages Material You",
-						"command": "cd /tmp; git clone https://github.com/FrancescoCaracciolo/material-you-colors.git; cd material-you-colors; make build;make install; npm install --prefix $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io; exec bash",
-						"description": "cd /tmp\ngit clone https://github.com/FrancescoCaracciolo/material-you-colors.git\ncd material-you-colors\nmake build\nmake install\nnpm install --prefix $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io;",
+						"command": "cd /tmp; git clone https://github.com/FrancescoCaracciolo/material-you-colors.git; cd material-you-colors; make build;make install; npm install --prefix $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io;cd $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io; git clone https://github.com/francescocaracciolo/adwaita-material-you; cd adwaita-material-you; bash local-install.sh; exec bash",
+						"description": "cd /tmp\ngit clone https://github.com/FrancescoCaracciolo/material-you-colors.git\ncd material-you-colors\nmake build\nmake install\nnpm install --prefix $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io;\ncd $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io\n git clone https://github.com/francescocaracciolo/adwaita-material-you\ncd adwaita-material-you\nbash local-install.sh",
 					},
 				]
 			}
