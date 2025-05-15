@@ -52,6 +52,12 @@ SCRIPTS = [
 			"scripts":
 				[
 					{
+						"title": "Update Material You",
+						"subtitle": "Update Material You extension, the Gnome extension that manages Material You",
+						"command": "cd /tmp; git clone https://github.com/FrancescoCaracciolo/material-you-colors.git; cd material-you-colors; make build;make install; npm install --prefix $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io;cd $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io; git clone https://github.com/francescocaracciolo/adwaita-material-you; cd adwaita-material-you; bash local-install.sh; exec bash",
+						"description": "cd /tmp\ngit clone https://github.com/FrancescoCaracciolo/material-you-colors.git\ncd material-you-colors\nmake build\nmake install\nnpm install --prefix $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io;\ncd $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io\n git clone https://github.com/francescocaracciolo/adwaita-material-you\ncd adwaita-material-you\nbash local-install.sh",
+					},
+					{
 						"title": "Update Nyarch Updater",
 						"subtitle": "Update Nyarch Updater application by downloading it from the latest release on github",
 						"command": "cd /tmp; wget https://github.com/nyarchlinux/nyarchupdater/releases/latest/download/nyarchupdater.flatpak; flatpak install nyarchupdater.flatpak;exec bash",
@@ -98,12 +104,6 @@ SCRIPTS = [
 						"subtitle": "Update Nyarch Script application by downloading it from the latest release on github",
 						"command": "cd /tmp; wget https://github.com/nyarchlinux/nyarchscript/releases/latest/download/nyarchscript.flatpak; flatpak install nyarchscript.flatpak;exec bash",
 						"description": "cd /tmp\nwget https://github.com/nyarchlinux/nyarchscript/releases/latest/download/nyarchscript.flatpak\nflatpak install nyarchscript.flatpak",
-					},
-					{
-						"title": "Update Material You",
-						"subtitle": "Update Material You extension, the Gnome extension that manages Material You",
-						"command": "cd /tmp; git clone https://github.com/FrancescoCaracciolo/material-you-colors.git; cd material-you-colors; make build;make install; npm install --prefix $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io;cd $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io; git clone https://github.com/francescocaracciolo/adwaita-material-you; cd adwaita-material-you; bash local-install.sh; exec bash",
-						"description": "cd /tmp\ngit clone https://github.com/FrancescoCaracciolo/material-you-colors.git\ncd material-you-colors\nmake build\nmake install\nnpm install --prefix $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io;\ncd $HOME/.local/share/gnome-shell/extensions/material-you-colors@francescocaracciolo.github.io\n git clone https://github.com/francescocaracciolo/adwaita-material-you\ncd adwaita-material-you\nbash local-install.sh",
 					},
 				]
 			}
@@ -196,19 +196,6 @@ SCRIPTS = [
 						"subtitle": "Uninstall Firefox Gnome Theme",
 						"command": "xdg-open https://github.com/rafaelmardojai/firefox-gnome-theme#uninstalling",
 						"description": "https://github.com/rafaelmardojai/firefox-gnome-theme#uninstalling",
-					},
-					{
-						"title": "Discord Dnome Theme",
-						"website": "xdg-open https://github.com/NyarchLinux/NyarchScript/tree/master/docs/DNOME.md",
-						"subtitle": "Make discord more coherent with your desktop, this command will also install crycord to inject css",
-						"command": "yay -S crycord; mkdir -p ~/.config/discord-themes; cd ~/.config/discord-themes; wget https://raw.githubusercontent.com/GeopJr/DNOME/main/DNOME-latest.css; crycord -c ~/.config/discord-themes/DNOME-latest.css;exec bash",
-						"description": "yay -S crycord  # Install Crycord from the AUR\nmkdir -p ~/.config/discord-themes\ncd ~/.config/discord-themes\nwget https://raw.githubusercontent.com/GeopJr/DNOME/main/DNOME-latest.css  # Download css theme\ncrycord -c ~/.config/discord-themes/DNOME-latest.css  # Inject CSS",
-					},
-					{
-						"title": "Uninstall Discord Dnome Theme",
-						"subtitle": "Uninstall dnome theme from discord",
-						"command": "crycord -r; exec bash",
-						"description": "crycord -r",
 					},
 					{
 						"title": "Install Pywalfox",
