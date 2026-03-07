@@ -94,12 +94,6 @@ SCRIPTS = [
 						"description": "cd /tmp\nwget https://github.com/nyarchlinux/catgirldownloader/releases/latest/download/catgirldownloader.flatpak\nflatpak install catgirldownloader.flatpak",
 					},
 					{
-						"title": "Update Waifu Downloader",
-						"subtitle": "Update Waifu Downloader application by downloading it from the latest release on github",
-						"command": "cd /tmp; wget https://github.com/nyarchlinux/waifudownloader/releases/latest/download/waifudownloader.flatpak; flatpak install waifudownloader.flatpak;exec bash",
-						"description": "cd /tmp\nwget https://github.com/nyarchlinux/waifudownloader/releases/latest/download/waifudownloader.flatpak\nflatpak install waifudownloader.flatpak",
-					},
-					{
 						"title": "Update Nyarch Script",
 						"subtitle": "Update Nyarch Script application by downloading it from the latest release on github",
 						"command": "cd /tmp; wget https://github.com/nyarchlinux/nyarchscript/releases/latest/download/nyarchscript.flatpak; flatpak install nyarchscript.flatpak;exec bash",
