@@ -5,9 +5,7 @@
 # This program is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
+# (at your option) any later version. This program is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
@@ -16,7 +14,7 @@
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
 # SPDX-License-Identifier: GPL-3.0-or-later
-
+import os
 from gi.repository import Adw
 from gi.repository import Gtk
 import subprocess
@@ -94,8 +92,30 @@ class NyarchscriptWindow(Adw.ApplicationWindow):
         label.set_label("<span font_family='monospace'>" + text + "</span>")
         return label
 
-    def background_process(self, command):
-    	subprocess.Popen(["flatpak-spawn",  "--host", "kitty", "bash", "-c", command])
+    def is_flatpak(self) -> bool:
+        """
+        Check if we are in a flatpak
 
+        Returns:
+            bool: True if we are in a flatpak
+        """
+        if os.getenv("container"):
+            return True
+        return False
+    
+    def get_spawn_command(self) -> list:
+        """
+        Get the spawn command to run commands on the user system
+
+        Returns:
+            list: space diveded command  
+        """
+        if self.is_flatpak():
+            return ["flatpak-spawn", "--host"]
+        else:
+            return []
+    def background_process(self, command):
+    	subprocess.Popen(self.get_spawn_command() + ["ghostty", "-e", "bash", "-c", command]) 
+    
     def execute_command(self, command):
-    	subprocess.Popen(["flatpak-spawn",  "--host", "bash", "-c", command])
+    	subprocess.Popen(self.get_spawn_command() + ["bash", "-c", command])
