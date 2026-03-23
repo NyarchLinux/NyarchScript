@@ -115,8 +115,8 @@ SCRIPTS = [
 					{
 						"title": "Install fish",
 						"subtitle": "This command installs fish and sets it as default shell",
-						"command": "sudo pacman -S fish;chsh -s $(which fish); exec fish",
-						"description": "sudo pacman -S fish\nchsh -s $(which fish); exec fish",
+						"command": "sudo pacman -Sy fish;chsh -s $(which fish); exec fish",
+						"description": "sudo pacman -Sy fish\nchsh -s $(which fish); exec fish",
 					},
 					{
 						"title": "Install Oh My Fish!",
@@ -135,21 +135,21 @@ SCRIPTS = [
 					{
 						"title": "Install preload",
 						"subtitle": "Makes applications run faster by prefetching binaries and shared objects",
-						"command": "yay -S preload; sudo systemctl enable --now preload; exec bash",
-						"description": "yay -S preload\nsudo systemctl enable --now preload",
+						"command": "yay -Sy preload; sudo systemctl enable --now preload; exec bash",
+						"description": "yay -Sy preload\nsudo systemctl enable --now preload",
 					},
 					{
 						"title": "Install auto-cpufreq",
 						"website": "xdg-open https://github.com/AdnanHodzic/auto-cpufreq",
 						"subtitle": "Automatic CPU speed and power optimizer, useful to enhance laptop battery life",
-						"command": "yay -S auto-cpufreq;exec bash",
-						"description": "yay -S auto-cpufreq",
+						"command": "yay -Sy auto-cpufreq;exec bash",
+						"description": "yay -Sy auto-cpufreq",
 					},
 					{
 						"title": "Install power-profiles-daemon",
 						"subtitle": "Power Profiles daemon modifies system behaviour based upon user-selected power profiles, choosen from quick settings",
-						"command": "sudo pacman -S power-profiles-daemon;exec bash",
-						"description": "sudo pacman -S power-profiles-daemon",
+						"command": "sudo pacman -Sy power-profiles-daemon;exec bash",
+						"description": "sudo pacman -Sy power-profiles-daemon",
 					},
 				]
 			},
@@ -161,14 +161,14 @@ SCRIPTS = [
 					{
 						"title": "Install Linux Zen Kernel",
 						"subtitle": "This command installs linux zen kernel, optimized for desktop, you can choose which kernel to boot from GRUB in 'advanced options'",
-						"command": "sudo pacman -S linux-zen linux-zen-headers;exec bash",
-						"description": "sudo pacman -S linux-zen linux-zen-headers",
+						"command": "sudo pacman -Sy linux-zen linux-zen-headers;exec bash",
+						"description": "sudo pacman -Sy linux-zen linux-zen-headers",
 					},
 					{
 						"title": "Install Linux LTS Kernel",
 						"subtitle": "This command installs linux Long Term Support kernel, useful if you have issues with proprietary drivers, you can choose which kernel to boot from GRUB in 'advanced options'",
-						"command": "sudo pacman -S linux-lts linux-lts-headers;exec bash",
-						"description": "sudo pacman -S linux-lts linux-lts-headers",
+						"command": "sudo pacman -Sy linux-lts linux-lts-headers;exec bash",
+						"description": "sudo pacman -Sy linux-lts linux-lts-headers",
 					},
 				]
 			},
@@ -194,9 +194,9 @@ SCRIPTS = [
 					{
 						"title": "Install Pywalfox",
 						"subtitle": "Adapts firefox theme color to NyarchLinux theme",
-						"command": "yay -S python-pywalfox; pywalfox install; xdg-open https://addons.mozilla.org/it/firefox/addon/pywalfox/; exec bash",
+						"command": "yay -Sy python-pywalfox; pywalfox install; xdg-open https://addons.mozilla.org/it/firefox/addon/pywalfox/; exec bash",
 						"website": "xdg-open https://addons.mozilla.org/it/firefox/addon/pywalfox/",
-						"description": "yay -S python-pywalfox\npywalfox install\nxdg-open https://addons.mozilla.org/it/firefox/addon/pywalfox/",
+						"description": "yay -Sy python-pywalfox\npywalfox install\nxdg-open https://addons.mozilla.org/it/firefox/addon/pywalfox/",
 					},
 					{
 						"title": "Install Wal VSCode Theme",
@@ -221,14 +221,14 @@ SCRIPTS = [
 					{
 						"title": "Wacom drivers",
 						"subtitle": "Install wacom drivers for graphics tablets and stylus",
-						"command": "sudo pacman -S xf86-input-wacom libwacom;trizen -S input-wacom-dkms wacom-utility;exec bash",
-						"description": "sudo pacman -S xf86-input-wacom libwacom",
+						"command": "sudo pacman -Sy xf86-input-wacom libwacom;trizen -S input-wacom-dkms wacom-utility;exec bash",
+						"description": "sudo pacman -Sy xf86-input-wacom libwacom",
 					},
 					{
 						"title": "Wacom drivers for Surface devices",
 						"subtitle": "Install a patched version of libwacom for Surface devices",
-						"command": "yay -S libwacom-surface;exec bash",
-						"description": "yay -S libwacom-surface",
+						"command": "yay -Sy libwacom-surface;exec bash",
+						"description": "yay -Sy libwacom-surface",
 					},
 				]
 			}
