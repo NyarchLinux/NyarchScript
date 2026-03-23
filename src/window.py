@@ -115,7 +115,7 @@ class NyarchscriptWindow(Adw.ApplicationWindow):
         else:
             return []
     def background_process(self, command):
-    	subprocess.Popen(self.get_spawn_command() + ["ghostty", "-e", "bash", "-c", command]) 
+    	subprocess.Popen(self.get_spawn_command() + ["kitty", "bash", "-c", command]) 
     
     def execute_command(self, command):
     	subprocess.Popen(self.get_spawn_command() + ["bash", "-c", command])
