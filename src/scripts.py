@@ -226,6 +226,19 @@ SCRIPTS = [
 					},
 				]
 			},
+			{
+            "title": "WMs and shells",
+			"subtitle": None,
+			"scripts":
+				[
+					{
+						"title": "Install niri and Noctalia",
+						"subtitle": "Install the niri tiling WM and Noctalia shell",
+						"command": "sudo pacman -S niri noctalia xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal-gtk matugen cava qt6-multimedia-ffmpeg;exec bash",
+						"description": "sudo pacman -S niri noctalia xwayland-satellite xdg-desktop-portal-gnome xdg-desktop-portal-gtk matugen cava qt6-multimedia-ffmpeg",
+					},
+                ]
+			},
 		]
 	},
 	{
